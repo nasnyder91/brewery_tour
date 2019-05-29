@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const SearchBar = () => {
-  const [brewerySearch, setBrewerySearch] = useState("");
+// Hooks
+import useFormHandler from "../hooks/useFormHandler";
 
-  useEffect(() => {
-    console.log(brewerySearch);
-  });
+const SearchBar = props => {
+  const { inputs, handleInputChange, handleSubmit } = useFormHandler(
+    props.onSearch
+  );
 
   return (
     <div className="container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Search for a Brewery by US City</label>
           <div className="control">
             <input
               className="input"
               type="text"
+              name="by_city"
               placeholder="Enter a US City"
-              onChange={e => setBrewerySearch(e.target.value)}
+              value={inputs.city}
+              onChange={handleInputChange}
             />
           </div>
         </div>

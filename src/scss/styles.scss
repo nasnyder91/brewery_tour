@@ -1,0 +1,17 @@
+@charset "utf-8";
+@import "~bulma/bulma.sass";
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.brewery-card {
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: #9f9f9f;
+  }
+}

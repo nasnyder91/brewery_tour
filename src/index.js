@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-// CSS
-import "bulma/css/bulma.min.css";
+// SCSS
+import "./scss/styles.scss";
 
 ReactDOM.render(<App />, document.querySelector("#root"));
