@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { MAX_PER_CALL } from "../vars";
 
 const useFetchBreweries = () => {
   const [breweries, setBreweries] = useState([]);
@@ -7,7 +8,7 @@ const useFetchBreweries = () => {
 
   const fetchBreweries = filters => {
     setLoadingBreweries(true);
-    const searchParams = {};
+    const searchParams = { per_page: MAX_PER_CALL };
 
     for (const filter of Object.keys(filters)) {
       if (filters[filter].length > 0) {

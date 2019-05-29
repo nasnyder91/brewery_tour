@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const useFormHandler = callback => {
-  const [inputs, setInputs] = useState({ by_city: "" });
+  const [inputs, setInputs] = useState({
+    by_city: "",
+    by_state: "",
+    by_name: ""
+  });
 
   const handleSubmit = e => {
     if (e) {

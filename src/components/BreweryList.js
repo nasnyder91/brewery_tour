@@ -18,7 +18,7 @@ const renderBreweries = (breweries, breweryClicked) => {
 };
 
 const BreweryList = ({ breweries, breweryClicked }) => {
-  return <div>{renderBreweries(breweries, breweryClicked)}</div>;
+  return <>{renderBreweries(breweries, breweryClicked)}</>;
 };
 
 export default BreweryList;

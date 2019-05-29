@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 // Components
-import SearchBar from "./SearchBar";
+import Search from "./Search";
 import BreweryList from "./BreweryList";
 import BreweryMap from "./BreweryMap";
 
 // Hooks
 import useFetchBreweries from "../hooks/useFetchBreweries";
 
-// const openBreweryMap = brewery => {
-//   return <BreweryMap brewery={brewery} />;
-// };
-
 const App = () => {
   const [activeBrewery, setActiveBrewery] = useState(null);
-
-  useEffect(() => {
-    console.log(activeBrewery);
-  });
 
   const { breweries, loadingBreweries, fetchBreweries } = useFetchBreweries();
 
@@ -25,12 +19,17 @@ const App = () => {
     <section className="section">
       <div className="container">
         <div className="columns is-desktop">
-          <div className="column is-one-fifth-desktop">
-            <SearchBar onSearch={fetchBreweries} />
+          <div className="column is-one-quarter-desktop">
+            <Search onSearch={fetchBreweries} />
           </div>
-          <div className="column is-four-fifths-desktop">
+          <div className="column is-three-quarters-desktop">
             {loadingBreweries ? (
-              <h1 className="is-size-1">Loading</h1>
+              <FontAwesomeIcon
+                icon={faSpinner}
+                size="9x"
+                style={{ color: "green", margin: "auto" }}
+                spin
+              />
             ) : (
               <BreweryList
                 breweries={breweries}
@@ -39,7 +38,12 @@ const App = () => {
             )}
           </div>
         </div>
-        {activeBrewery ? <BreweryMap brewery={activeBrewery} /> : null}
+        {activeBrewery ? (
+          <BreweryMap
+            brewery={activeBrewery}
+            closeMap={() => setActiveBrewery(null)}
+          />
+        ) : null}
       </div>
     </section>
   );
