@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import { MAX_PER_CALL } from "../vars";
 
@@ -8,10 +8,11 @@ import { MAX_PER_CALL } from "../vars";
 import BreweryCard from "./BreweryCard";
 
 const renderBreweries = (breweries, breweryClicked) => {
-  const breweryCards = breweries.map(brewery => {
+  const breweryCards = breweries.map((brewery, index) => {
     return (
       <BreweryCard
         key={brewery.id}
+        listNumber={index + 1}
         brewery={brewery}
         onClickBrewery={() => breweryClicked(brewery)}
       />
@@ -21,10 +22,23 @@ const renderBreweries = (breweries, breweryClicked) => {
   return breweryCards;
 };
 
-const BreweryList = ({ breweries, breweryClicked, loadMoreClicked }) => {
+const BreweryList = ({
+  breweries,
+  breweryClicked,
+  loadMoreClicked,
+  loading
+}) => {
   return (
     <>
       {renderBreweries(breweries, breweryClicked)}
+      {loading ? (
+        <FontAwesomeIcon
+          icon={faSpinner}
+          size="9x"
+          style={{ display: "block", color: "black", margin: "auto" }}
+          spin
+        />
+      ) : null}
       {breweries.length > 0 && breweries.length % MAX_PER_CALL === 0 ? (
         <button
           className="button"

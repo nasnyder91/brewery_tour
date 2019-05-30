@@ -1,1 +1,1 @@
-export const MAX_PER_CALL = "20";
+export const MAX_PER_CALL = "25";

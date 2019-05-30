@@ -7,7 +7,6 @@ const useFetchBreweries = () => {
   const [loadingBreweries, setLoadingBreweries] = useState(false);
 
   const fetchBreweries = filters => {
-    console.log(filters);
     setLoadingBreweries(true);
     const searchParams = { per_page: MAX_PER_CALL };
 
