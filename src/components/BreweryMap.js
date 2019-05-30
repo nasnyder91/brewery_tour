@@ -11,6 +11,10 @@ const BreweryMap = ({ brewery, closeMap }) => {
     },
     zoom: 12
   };
+
+  const coordsAvailable =
+    !breweryLocation.center.lat || !breweryLocation.center.lng ? false : true;
+
   const { name, street, city, state, postal_code } = brewery;
 
   return (
@@ -26,20 +30,26 @@ const BreweryMap = ({ brewery, closeMap }) => {
           <h3 className="title is-3">{name}</h3>
           <p className="subtitle">{`${street}, ${city}, ${state} ${postal_code}`}</p>
         </header>
-        <div style={{ height: "70vh", width: "100%" }}>
-          <GoogleMapReact
-            bootstrapURLKeys={{
-              key: `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`
-            }}
-            center={breweryLocation.center}
-            zoom={breweryLocation.zoom}
-          >
-            <MapMarker
-              lat={breweryLocation.center.lat}
-              lng={breweryLocation.center.lng}
-            />
-          </GoogleMapReact>
-        </div>
+        {coordsAvailable ? (
+          <div style={{ height: "70vh", width: "100%" }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`
+              }}
+              center={breweryLocation.center}
+              zoom={breweryLocation.zoom}
+            >
+              <MapMarker
+                lat={breweryLocation.center.lat}
+                lng={breweryLocation.center.lng}
+              />
+            </GoogleMapReact>
+          </div>
+        ) : (
+          <div className="modal-card-body">
+            <p>Sorry, the map is not available for this brewery.</p>
+          </div>
+        )}
       </div>
     </div>
   );

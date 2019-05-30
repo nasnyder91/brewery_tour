@@ -4,7 +4,9 @@ const useFormHandler = callback => {
   const [inputs, setInputs] = useState({
     by_city: "",
     by_state: "",
-    by_name: ""
+    by_name: "",
+    by_type: "",
+    page: "1"
   });
 
   const handleSubmit = e => {

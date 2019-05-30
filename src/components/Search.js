@@ -9,7 +9,8 @@ const Search = props => {
   );
 
   return (
-    <div className="container">
+    <div className="container sticky-top">
+      <h3 className="is-size-3">Search</h3>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Search by US City</label>

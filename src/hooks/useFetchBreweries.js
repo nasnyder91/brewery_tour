@@ -7,6 +7,7 @@ const useFetchBreweries = () => {
   const [loadingBreweries, setLoadingBreweries] = useState(false);
 
   const fetchBreweries = filters => {
+    console.log(filters);
     setLoadingBreweries(true);
     const searchParams = { per_page: MAX_PER_CALL };
 
@@ -21,7 +22,9 @@ const useFetchBreweries = () => {
         params: searchParams
       })
       .then(response => {
-        setBreweries(response.data);
+        filters.page > 1
+          ? setBreweries(breweries => breweries.concat(response.data))
+          : setBreweries(response.data);
         setLoadingBreweries(false);
       });
   };

@@ -31,8 +31,20 @@
   transform: translate(-50%, -100%);
 }
 
+.scroll-top-btn {
+  cursor: pointer;
+  position: sticky;
+}
+
+@media only screen and (min-width: 1024px) {
+  .sticky-top {
+    position: sticky;
+    top: 20px;
+  }
+}
+
 @media only screen and (max-height: 700px) {
-  .modal {
-    justify-content: flex-end;
+  .modal-content {
+    margin-top: 70px;
   }
 }
