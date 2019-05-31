@@ -16,7 +16,7 @@ const Search = props => {
   return (
     <div className="container sticky-top">
       <h3
-        className="is-size-3 has-text-centered"
+        className="is-size-3 has-text-centered has-text-weight-semibold"
         style={{ marginBottom: "20px" }}
       >
         | Search |

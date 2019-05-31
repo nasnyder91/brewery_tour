@@ -19,7 +19,7 @@ const App = () => {
     <nav className="navbar">
       <div className="container">
         <div className="navbar-brand">
-          <h1 className="navbar-item title is-size-2 is-size-1-tablet main-title">
+          <h1 className="navbar-item title is-size-2 is-size-1-tablet main-title" style={{ fontWeight: '900' }}>
             Brewery Tour
           </h1>
         </div>
