@@ -1,12 +1,14 @@
 @charset "utf-8";
 
-$input-border-color: #c4c4c4;
-$box-shadow: 0 2px 3px #c4c4c4, 0 0 0 1px #c4c4c4;
-
-@import "~bulma/bulma.sass";
-
 $primary-color: #ca6014;
 $primary-background-color: #eeeeee;
+$border-color: #c4c4c4;
+
+$input-border-color: $border-color;
+$box-shadow: 0 2px 3px $border-color, 0 0 0 1px $border-color;
+$navbar-background-color: #ca601410;
+
+@import "~bulma/bulma.sass";
 
 body,
 html {

@@ -15,11 +15,19 @@ const App = () => {
   const { breweries, loadingBreweries, fetchBreweries } = useFetchBreweries();
 
   return (
+    <>
+    <nav className="navbar">
+      <div className="container">
+        <div className="navbar-brand">
+          <h1 className="navbar-item title is-size-2 is-size-1-tablet main-title">
+            Brewery Tour
+          </h1>
+        </div>
+      </div>
+    </nav>
     <section className="section">
       <div className="container">
-        <h1 className="title is-size-2 is-size-1-tablet main-title">
-          Brewery Tour
-        </h1>
+
         <div className="columns is-desktop">
           <div className="column is-one-quarter-desktop search-container">
             <Search
@@ -53,6 +61,7 @@ const App = () => {
         ) : null}
       </div>
     </section>
+    </>
   );
 };
 
