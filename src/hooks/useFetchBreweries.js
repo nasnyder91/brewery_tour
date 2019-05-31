@@ -12,7 +12,7 @@ const useFetchBreweries = () => {
 
     for (const filter of Object.keys(filters)) {
       if (filters[filter].length > 0) {
-        searchParams[filter] = filters[filter];
+        searchParams[filter] = filters[filter].replace(" ", "_");
       }
     }
 

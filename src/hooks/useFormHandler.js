@@ -22,7 +22,7 @@ const useFormHandler = callback => {
     e.persist();
     setInputs(inputs => ({
       ...inputs,
-      [e.target.name]: e.target.value.replace(" ", "_")
+      [e.target.name]: e.target.value
     }));
   };
 
