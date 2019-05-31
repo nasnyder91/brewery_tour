@@ -19,11 +19,13 @@ class BreweryCard extends PureComponent {
             <span className="tag is-large">{this.props.listNumber}</span>
           </div>
           <div className="column">
-            <h3 className="title is-3">{name}</h3>
+            <h3 className="title is-size-3-tablet is-size-4-mobile">{name}</h3>
             <h5 className="subtitle is-5 is-capitalized">{brewery_type}</h5>
             <p>{`${street}, ${city}, ${state} ${postal_code}`}</p>
             <p className="overflow-ellipsis">
-              <a href={website_url}>{website_url}</a>
+              <a href={website_url} target="_blank" rel="noopener noreferrer">
+                {website_url}
+              </a>
             </p>
           </div>
         </div>

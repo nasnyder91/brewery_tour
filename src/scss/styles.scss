@@ -1,5 +1,18 @@
 @charset "utf-8";
+
+$input-border-color: #c4c4c4;
+$box-shadow: 0 2px 3px #c4c4c4, 0 0 0 1px #c4c4c4;
+
 @import "~bulma/bulma.sass";
+
+$primary-color: #ca6014;
+$primary-background-color: #eeeeee;
+
+body,
+html {
+  height: 100vh;
+  background-color: $primary-background-color;
+}
 
 .overflow-ellipsis {
   text-overflow: ellipsis;
@@ -7,12 +20,25 @@
   overflow: hidden;
 }
 
+.main-title {
+  color: $primary-color;
+  letter-spacing: 3px;
+}
+
+.search-container {
+  margin-bottom: 24px;
+}
+
+.search-btn {
+  // background-color: $primary-color;
+}
+
 .brewery-card {
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: background-color 0.5s ease;
 
   &:hover {
-    background-color: #9f9f9f;
+    background-color: #ca601430;
   }
 }
 
@@ -29,11 +55,6 @@
   width: 50px;
   height: 50px;
   transform: translate(-50%, -100%);
-}
-
-.scroll-top-btn {
-  cursor: pointer;
-  position: sticky;
 }
 
 @media only screen and (min-width: 1024px) {

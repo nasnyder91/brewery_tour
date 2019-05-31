@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import Search from "./Search";
@@ -19,9 +17,11 @@ const App = () => {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="title is-size-2 is-size-1-tablet">Brewery Tour</h1>
+        <h1 className="title is-size-2 is-size-1-tablet main-title">
+          Brewery Tour
+        </h1>
         <div className="columns is-desktop">
-          <div className="column is-one-quarter-desktop">
+          <div className="column is-one-quarter-desktop search-container">
             <Search
               onSearch={inputs => {
                 fetchBreweries(inputs);

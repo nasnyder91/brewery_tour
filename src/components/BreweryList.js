@@ -35,7 +35,7 @@ const BreweryList = ({
         <FontAwesomeIcon
           icon={faSpinner}
           size="9x"
-          style={{ display: "block", color: "black", margin: "auto" }}
+          style={{ display: "block", color: "#ca6014", margin: "auto" }}
           spin
         />
       ) : null}
