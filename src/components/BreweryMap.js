@@ -1,9 +1,12 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
 
 import MapMarker from "./MapMarker";
 
 const BreweryMap = ({ brewery, closeMap }) => {
+  const env = runtimeEnv();
+
   const breweryLocation = {
     center: {
       lat: parseFloat(brewery.latitude),
