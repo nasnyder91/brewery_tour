@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
 
 // Components
 import Search from "./Search";
@@ -13,6 +14,8 @@ const App = () => {
   const [currentSearch, setCurrentSearch] = useState({});
 
   const { breweries, loadingBreweries, fetchBreweries } = useFetchBreweries();
+
+  const env = runtimeEnv();
 
   return (
     <section className="section">

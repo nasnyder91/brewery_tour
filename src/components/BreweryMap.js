@@ -34,7 +34,7 @@ const BreweryMap = ({ brewery, closeMap }) => {
           <div style={{ height: "70vh", width: "100%" }}>
             <GoogleMapReact
               bootstrapURLKeys={{
-                key: `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`
+                key: `${env.REACT_APP_GOOGLE_MAP_API_KEY}`
               }}
               center={breweryLocation.center}
               zoom={breweryLocation.zoom}
