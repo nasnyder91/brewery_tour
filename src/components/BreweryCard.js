@@ -1,6 +1,10 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 
-class BreweryCard extends PureComponent {
+class BreweryCard extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     const {
       name,
